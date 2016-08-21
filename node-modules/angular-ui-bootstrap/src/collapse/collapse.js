@@ -18,14 +18,12 @@ angular.module('ui.bootstrap.collapse', [])
           horizontal = !!('horizontal' in attrs);
           if (horizontal) {
             css = {
-              width: 'auto',
-              height: 'inherit'
+              width: ''
             };
             cssTo = {width: '0'};
           } else {
             css = {
-              width: 'inherit',
-              height: 'auto'
+              height: ''
             };
             cssTo = {height: '0'};
           }
@@ -40,9 +38,9 @@ angular.module('ui.bootstrap.collapse', [])
 
         function getScrollFromElement(element) {
           if (horizontal) {
-            return {width: element.scrollWidth + 'px'};
+            return {width: ''};
           }
-          return {height: element.scrollHeight + 'px'};
+          return {height: ''};
         }
 
         function expand() {
@@ -61,10 +59,16 @@ angular.module('ui.bootstrap.collapse', [])
                 $animateCss(element, {
                   addClass: 'in',
                   easing: 'ease',
+                  css: {
+                    overflow: 'hidden'
+                  },
                   to: getScrollFromElement(element[0])
                 }).start()['finally'](expandDone);
               } else {
                 $animate.addClass(element, 'in', {
+                  css: {
+                    overflow: 'hidden'
+                  },
                   to: getScrollFromElement(element[0])
                 }).then(expandDone);
               }
