@@ -1,0 +1,119 @@
+<div>
+	<div class="navbar-fixed">
+		<nav class="indigo darken-3">
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo"><img src="..\..\img\saplogo.png" height="40" width="80"></a>
+				<a href="#" data-activates="nav-mobile" class="button-collapse" data-sidenav="left" data-closeonclick="false">
+					<i class="material-icons">menu</i>
+				</a>
+
+				<!--<a href="#" data-activates="mobile-demo" class="button-collapse"></a>-->
+
+
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Pricing</a></li>
+					<li><a href="#contactUs">Contact</a></li>
+				</ul>
+				<ul id="nav-mobile" class="side-nav">
+					<li class="bold"><a href="#" class="waves-effect waves-teal">About</a></li>
+					<li class="bold"><a href="#" class="waves-effect waves-teal">Pricing</a></li>
+					<li class="bold"><a href="#" class="waves-effect waves-teal">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+
+<div>
+
+	<div><h4>{{websites}} : {{catchQuery}}</h4></div>
+
+
+
+	<div class="row">
+
+		<div class="chip" ng-repeat="tag in tags">
+			{{tag.tagName}}
+		</div>
+		<ul class="collapsible popout" data-collapsible="accordion" ng-repeat="company in companyDetails">
+			<li>
+				<div class="collapsible-header teal darken-1 white-text">{{company.Name}}</div>
+				<div class="collapsible-body purple lighten-5">
+
+
+					<div class="row">
+
+						<div class="col s12 m4">
+
+							<div class="card blue-grey">
+								<div class="card-content white-text">
+									<span class="card-title">Revenue <p> <i class="material-icons">trending_up</i>&nbsp;{{company.Revenue}}</p></span>
+
+									</div>
+								</div>
+						</div>
+						<div class="col s12 m4">
+
+							<div class="card blue-grey">
+								<div class="card-content white-text">
+									<span class="card-title">Rank <p> <i class="material-icons">trending_down</i>&nbsp;#96</p></span>
+
+									</div>
+								</div>
+						</div>
+						<div class="col s12 m4">
+
+							<div class="card blue-grey">
+								<div class="card-content white-text">
+									<span class="card-title">Services
+									<p>
+											E-Commerce
+									</p>
+
+									</span>
+
+									</div>
+								</div>
+						</div>
+
+						<div class="col s12 m6">
+							<div class="card white">
+								<div class="card-content">
+
+									<canvas id="bar" class="chart chart-bar" data="data" labels="labels" chart-legend="true" chart-series="series"></canvas>
+									<input type="text" ng-model="data[0][0]"></input>
+									<br>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="col s12 m6">
+							<div class="card white">
+								<div class="card-content">
+
+									<canvas id="bar" class="chart chart-line" data="data" labels="labels" chart-legend="true" chart-series="series"></canvas>
+									<input type="range" min="2006" max="2012" ng-model="labels[0]"/>
+
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</li>
+		</ul>
+
+
+
+	</div>
+
+
+</div>
+
+</div>
